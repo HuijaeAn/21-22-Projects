@@ -110,7 +110,8 @@ def optimize_tail_calls(original_scheme_eval):
     """Return a properly tail recursive version of an eval function."""
     def optimized_eval(expr, env, tail=False):
         """Evaluate Scheme expression EXPR in Frame ENV. If TAIL,
-        return an Unevaluated containing an expression for further evaluation."""
+        return an Unevaluated containing an expression for further evaluation.
+        """
         if tail and not scheme_symbolp(expr) and not self_evaluating(expr):
             return Unevaluated(expr, env)
 

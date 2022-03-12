@@ -211,6 +211,7 @@ def do_quasiquote_form(expressions, env):
             level += 1
 
         return val.map(lambda elem: quasiquote_item(elem, env, level))
+        
     validate_form(expressions, 1, 1)
     return quasiquote_item(expressions.first, env, 1)
 
